@@ -1,8 +1,8 @@
 #pragma once
-
 #include <iostream>
 #include <list>
 #include "ExceptionEmptyList.h"
+
 template<class T>
 struct MyComparator {
     bool operator()(T a, T b) const {
@@ -10,20 +10,19 @@ struct MyComparator {
     }
 };
 
-// any templates?
+
+
 template<class T>
 class PriorityQueue {
-   
+
+    std::list<T> listQueue;
+    MyComparator<T> compr;
+
 public:
-	
-   // You need to complete the implement : 
+
 	void push(const T& t); 
 	T poll();
 
-private:
-    // add relevant data members
-    std::list<T> listQueue;
-    MyComparator<T> compr;
 };
 
 template<class T>

@@ -5,15 +5,12 @@
 using std::string; 
 using std::ostream;
 
-class Dog
-{
+class Dog {
 	
 public:
 	Dog(int age, int weight, string name);
-	
 	int getAge() const { return m_age; }
 	int getWeight() const { return m_weight; }
-
 	string getName()const { return m_name; } ;
 
 private:
