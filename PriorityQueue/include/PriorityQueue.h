@@ -34,3 +34,11 @@ T PriorityQueue<T>::poll() {
     listQueue.pop_front();
     return front;
 }
+
+template<class T>
+void PriorityQueue<T>::push(const T &element ) {
+    auto it = listQueue.begin();
+    while (it != listQueue.end() && compr(*it, element))
+        it++;
+    listQueue.insert(it,element);
+}
