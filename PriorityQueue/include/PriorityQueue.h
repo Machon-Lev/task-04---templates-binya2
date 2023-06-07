@@ -25,3 +25,12 @@ private:
     std::list<T> listQueue;
     MyComparator<T> compr;
 };
+
+template<class T>
+T PriorityQueue<T>::poll() {
+    if (listQueue.empty())
+        throw exceptionEmptyList();
+    T front = listQueue.front();
+    listQueue.pop_front();
+    return front;
+}
