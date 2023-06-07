@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <list>
-#include <exception>
+#include "ExceptionEmptyList.h"
 template<class T>
 struct MyComparator {
     bool operator()(T a, T b) const {
@@ -29,7 +29,7 @@ private:
 template<class T>
 T PriorityQueue<T>::poll() {
     if (listQueue.empty())
-        throw exceptionEmptyList();
+        throw ExceptionEmptyList();
     T front = listQueue.front();
     listQueue.pop_front();
     return front;

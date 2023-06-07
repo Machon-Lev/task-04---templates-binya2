@@ -15,7 +15,7 @@ Dog operator-(const Dog& lhs, const Dog& rhs)
 	return Dog(lhs.getAge(), (lhs.getWeight() - rhs.getWeight()), lhs.getName());
 }
 
-bool operator<(const Dog& lhs, const int rhs)
+bool operator<(const Dog& lhs, const Dog& rhs)
 {
-	return lhs.getWeight() < rhs;
+	return lhs.getWeight() < rhs.getWeight();
 }
